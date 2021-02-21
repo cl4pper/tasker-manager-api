@@ -37,7 +37,7 @@ async function SignIn (req, res) {
 	try {
 		// CHECK IF USER EXIST BY USERNAME
 		let user = await AuthServices.getUser(username);
-		if (!user) return responseError(res, 400, 'Invalid username.');
+		if (!user) return responseError(res, 400, 'Invalid username or password.');
 
 		// CHECK IF THE PASSWORD IS CORRECT
 		const validPassword = await bcrypt.compare(password, user.password);
