@@ -13,7 +13,7 @@ mongoose.connect(mongoDB, {
 
 const { User } = require('@models');
 
-const signup = supertest('http://localhost:3000/api/auth/signup');
+const signup = supertest('http://localhost:3001/api/auth/signup');
 
 const user = {
 	username: 'User',
