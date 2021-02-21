@@ -36,7 +36,26 @@ async function GetUsers (req, res) {
 	}
 }
 
+async function DeleteUser (req, res) {
+	const params = req.params;
+	const id = params.id;
+
+	try {
+		let user = await UserServices.getUserById(id);
+		if (!user) return responseError(res, 400, 'USER NOT FOUND');
+
+		await UserServices.deleteUser(id);
+
+		return res
+			.status(200)
+			.send(defaultResponse({ status: 200, data: 'USER DELETED' }));
+	} catch(err) {
+		return responseError(res, 400, err.message);
+	}
+}
+
 module.exports = {
 	GetUser,
 	GetUsers,
+	DeleteUser
 };

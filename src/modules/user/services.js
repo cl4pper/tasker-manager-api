@@ -10,6 +10,15 @@ function getUser(query) {
 	}
 }
 
+function getUserById(query) {
+	try {
+		const user = User.findOne({ _id: query });
+		return user;
+	} catch (err) {
+		throw Error('Error at getUserById from User: ', err);
+	}
+}
+
 function getUsers() {
 	try {
 		const users = User.find();
@@ -19,7 +28,18 @@ function getUsers() {
 	}
 }
 
+function deleteUser(query) {
+	try {
+		const user = User.findOne({ _id: query });
+		return user.remove();
+	} catch (err) {
+		throw Error('Error at deleteUser from User: ', err);
+	}
+}
+
 module.exports = {
 	getUser,
-	getUsers
+	getUserById,
+	getUsers,
+	deleteUser
 };
