@@ -37,9 +37,18 @@ function deleteUser(query) {
 	}
 }
 
+function deleteUsers() {
+	try {
+		return User.find().deleteMany();
+	} catch (err) {
+		throw Error('Error at deleteUsers from User: ', err);
+	}
+}
+
 module.exports = {
 	getUser,
 	getUserById,
 	getUsers,
-	deleteUser
+	deleteUser,
+	deleteUsers
 };

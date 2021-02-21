@@ -54,8 +54,22 @@ async function DeleteUser (req, res) {
 	}
 }
 
+async function DeleteUsers (req, res) {
+
+	try {
+		await UserServices.deleteUsers();
+
+		return res
+			.status(200)
+			.send(defaultResponse({ status: 200, data: 'USERS DELETED' }));
+	} catch(err) {
+		return responseError(res, 400, err.message);
+	}
+}
+
 module.exports = {
 	GetUser,
 	GetUsers,
-	DeleteUser
+	DeleteUser,
+	DeleteUsers
 };
