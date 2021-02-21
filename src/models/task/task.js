@@ -1,18 +1,14 @@
 const mongoose = require('mongoose');
 
-const User = mongoose.model(
-	'User',
+const Task = mongoose.model(
+	'Task',
 	new mongoose.Schema({
-		username: {
+		content: {
 			type: String,
 			required: true
 		},
-		password: {
+		status: {
 			type: String,
-			required: true
-		},
-		projects: {
-			type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
 			require: true
 		},
 		createdAt: {
@@ -27,5 +23,5 @@ const User = mongoose.model(
 );
 
 module.exports = {
-	User
+	Task
 };

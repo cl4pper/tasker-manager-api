@@ -10,7 +10,7 @@ async function saltPassword(password) {
 async function formatUser (data) {
 	const user = new User({
 		...data,
-		friends: [],
+		projects: [],
 		createdAt: new Date(),
 		updatedAt: new Date(),
 	});

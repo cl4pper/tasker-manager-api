@@ -1,18 +1,14 @@
 const mongoose = require('mongoose');
 
-const User = mongoose.model(
-	'User',
+const Project = mongoose.model(
+	'Project',
 	new mongoose.Schema({
-		username: {
+		title: {
 			type: String,
 			required: true
 		},
-		password: {
-			type: String,
-			required: true
-		},
-		projects: {
-			type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Project' }],
+		tasks: {
+			type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }],
 			require: true
 		},
 		createdAt: {
@@ -27,5 +23,5 @@ const User = mongoose.model(
 );
 
 module.exports = {
-	User
+	Project
 };
