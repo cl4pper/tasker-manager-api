@@ -7,6 +7,10 @@ const Project = mongoose.model(
 			type: String,
 			required: true
 		},
+		userId: {
+			type: String,
+			required: true
+		},
 		tasks: {
 			type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Task' }],
 			require: true

@@ -15,9 +15,10 @@ app.use(express.json());
 // ROUTES  ---------------------------- START
 const { AuthRoutes } = require('@modules/auth');
 const { UserRoutes } = require('@modules/user');
+const { ProjectRoutes } = require('@modules/project');
 // ROUTES  ---------------------------- END
 
-app.use('/api', [AuthRoutes, UserRoutes]);
+app.use('/api', [AuthRoutes, UserRoutes, ProjectRoutes]);
 
 app.get('/api', (req, res) => {
 	res.status(200).send();

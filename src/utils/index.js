@@ -1,8 +1,9 @@
 const { defaultResponse, responseError } = require('./responseHandlers');
-const { formatUser } = require('./dataHandlers');
+const { formatUser, createProject } = require('./dataHandlers');
 
 module.exports = {
 	defaultResponse,
 	responseError,
-	formatUser
+	formatUser,
+	createProject
 };

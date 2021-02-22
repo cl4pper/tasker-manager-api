@@ -62,7 +62,7 @@ async function SignIn (req, res) {
 
 async function LoadUser (req, res) {
 	const headers = req.headers;
-	const token = headers.authentication;
+	const token = headers.authorization;
 
 	try {
 		let user = jwt.verify(token.replace('Bearer ', ''), process.env.JWT_PRIVATE_KEY);
