@@ -1,11 +1,11 @@
-# api-boilerplate
+# tasker-manager-api
 
-My own Node-express api boilerplate to start projects fast.
+Server running on ```http://localhost:3001```
 
-Actually running express, jest and supertest.
+Node and mongoDB required to run the project.
 
 ### Instructions (npm run ```command```):
-- server - to run the server (on ```http://localhost:3000/```)
+- server - to run the server
 - lint:fix - to apply prettier (see default config.)
 - test - to run tests (just one time)
 - testing - to keep tests running
