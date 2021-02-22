@@ -30,8 +30,8 @@ function getProjectsById(query) {
 function deleteProjectsById(query) {
 	const { userId, id } = query;
 	try {
-		const project = Project.find({ userId, _id: id });
-		return project.remove();
+		// const project = Project.find({ userId, _id: id });
+		return project.deleteOne({ userId, _id: id });
 	} catch (err) {
 		throw Error('Error at getLists from Project: ', err);
 	}
